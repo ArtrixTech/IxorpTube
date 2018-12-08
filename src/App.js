@@ -1,9 +1,10 @@
 import React from 'react'
 import { Router } from './components'
 import routes from './pages/routes'
-import './styles/index.less'
+
 import SideBar from './components/sidebar.js'
 
+import './styles/index.less'
 
 export default class App extends React.Component {
   constructor(props) {
@@ -13,7 +14,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div id="app">
-        <SideBar style="width:auto;"></SideBar>
+        <SideBar></SideBar>
       </div>
     )
   }
