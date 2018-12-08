@@ -16,7 +16,7 @@ export default class SideBar extends React.Component {
 
   render() {
     return (
-      <div style={{ "height": "100%", width: 80, "WebkitAppRegion": "no-drag" }} className="side_bar">
+      <div style={{ "height": "100%", width: 80, "WebkitAppRegion": "no-drag" }} className="ixorptube-sidebar">
         <Button type="primary" onClick={this.toggleCollapsed} className="hidden" style={{ marginBottom: 16, display: "none" }}>
           <Icon type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'} />
         </Button>
@@ -27,12 +27,13 @@ export default class SideBar extends React.Component {
           theme="light"
           inlineCollapsed={this.state.collapsed}
           inlineIndent={24}
+          className="ixorptube-sidebar"
           style={{ "height": "100%", "position": "absolute" }}
         >
 
           <Menu.Item key="1">
             <Icon type="pie-chart" style={{ "font-size": "22px", margin: "-3px" }} />
-            <span>State Panel</span>
+            <span>Dashboard</span>
           </Menu.Item>
           <Menu.Item key="2">
             <Icon type="desktop" style={{ "font-size": "22px", margin: "-3px" }} />

@@ -8,7 +8,7 @@ export default class Home extends React.Component {
 
   render() {
     return (
-      <div className="flex column">
+      <div className="flex column ixorptube-page-container">
         <Button onClick={() => {
           this.props.history.push('/demo')
         }}>demo home</Button>

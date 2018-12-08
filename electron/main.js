@@ -25,7 +25,7 @@ if (NODE_ENV === 'development') {
 
 
 function createWindow() {
-  mainWindow = new BrowserWindow({ width: 800, height: 600 ,frame: false})
+  mainWindow = new BrowserWindow({ width: 678, height: 368 ,frame: false})
 
   mainWindow.loadURL(winURL)
 

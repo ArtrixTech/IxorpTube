@@ -15,10 +15,15 @@ export default class App extends React.Component {
     return (
       <div id="app">
         <SideBar></SideBar>
+        <div id="contents">
+          <span id="logo" class="ixorptube-logo unselective">IxorpTube</span>
+          <Router routes={routes} />
+        </div>
+
       </div>
     )
   }
- 
+
 } // class App end        <Router routes={routes} />
 
 

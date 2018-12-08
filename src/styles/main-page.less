@@ -1,10 +1,6 @@
-.side_bar{
+.ixorptube-sidebar {}
 
-    
-
-}
 .unselective {
-
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -13,14 +9,28 @@
     user-select: none;
     cursor: default;
 }
-.hidden{
+
+.hidden {
     display: none;
 }
 
-.ixorptube-logo{
+.ixorptube-logo {
     font-family: Satisfy;
-    color:@primary-color;
+    color: @primary-color;
     font-size: 26px;
-    margin-top: 20px;
+    margin-top: 12px;
     font-weight: 100;
+}
+
+.ixorptube-page-container {
+    position: relative; //left: 65px;
+    width: 100%;
+    margin-top: 16px;
+    padding:8px;
+}
+
+#contents {
+    left: @bar-width;
+    position: relative;
+    width: @window-width - @bar-width;
 }
