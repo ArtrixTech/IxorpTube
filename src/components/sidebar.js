@@ -1,17 +1,29 @@
 import React from "react";
 import { Menu, Icon, Button } from 'antd';
 
+
+import { browserHistory,withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 const SubMenu = Menu.SubMenu;
 
-export default class SideBar extends React.Component {
+class SideBar extends React.Component {
   state = {
     collapsed: true,
+  }
+
+  constructor(props) {
+    super(props)
   }
 
   toggleCollapsed = () => {
     this.setState({
       collapsed: !this.state.collapsed,
     });
+  }
+
+  changePage = (path) => {
+   
+    // return(<Redirect to="/dashboard"/>) 
   }
 
   render() {
@@ -31,16 +43,16 @@ export default class SideBar extends React.Component {
           style={{ "height": "100%", "position": "absolute" }}
         >
 
-          <Menu.Item key="1">
-            <Icon type="pie-chart" style={{ "font-size": "22px", margin: "-3px" }} />
+          <Menu.Item key="1" onClick={() =>  this.props.history.push('/dashboard')} >
+            <Icon type="pie-chart" style={{ "fontSize": "22px", margin: "-3px" }} />
             <span>Dashboard</span>
           </Menu.Item>
-          <Menu.Item key="2">
-            <Icon type="desktop" style={{ "font-size": "22px", margin: "-3px" }} />
+          <Menu.Item key="2" onClick={() =>  this.props.history.push('/proxy_list')} >
+            <Icon type="desktop" style={{ "fontSize": "22px", margin: "-3px" }} />
             <span>Proxy List</span>
           </Menu.Item>
-          <Menu.Item key="3">
-            <Icon type="setting" style={{ "font-size": "22px", margin: "-3px" }} />
+          <Menu.Item key="3" onClick={() =>  this.props.history.push('/settings')} >
+            <Icon type="setting" style={{ "fontSize": "22px", margin: "-3px" }} />
             <span>Settings</span>
           </Menu.Item>
         </Menu>
@@ -48,3 +60,6 @@ export default class SideBar extends React.Component {
     );
   }
 }
+SideBar=withRouter(SideBar)
+export default SideBar;
+
