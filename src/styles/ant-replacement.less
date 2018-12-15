@@ -1,4 +1,29 @@
 //@primary-color: #ff026c; 
-
-@menu-inline-toplevel-item-height: 60px;
+@menu-inline-toplevel-item-height: 58px;
 @menu-collapsed-width: @bar-width;
+@menu-dark-color: white;
+@menu-dark-bg: @primary-color;
+@menu-dark-item-active-bg: white;
+@menu-dark-item-active: @primary-color;
+@menu-dark-highlight-color: @primary-color;
+@menu-popup-bg: @primary-color;
+// Menu - Item Preferences
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    box-shadow: 0px 0px 58px rgba(0, 0, 121, 0.2);
+    transition: box-shadow 0.8s, background 0.4s,color 0.25s;
+    color: @primary-color !important;
+}
+
+// Menu - Unselected Item Hover
+li.ant-menu-item.menuItem.ant-menu-item-selected,.ant-menu-item-active{
+    color: @primary-color !important ;
+
+}
+// Menu - Unselected Item Hover
+.ant-menu-dark:not(.ant-menu-item-selected)  .ant-menu-item-active  {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+
+
+

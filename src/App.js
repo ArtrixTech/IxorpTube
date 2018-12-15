@@ -51,6 +51,7 @@ export default class App extends React.Component {
                   <Route path="/dashboard" component={Dashboard} />
                   <Route path="/proxy_list" component={ProxyList} />
                   <Route path="/settings" component={Settings} />
+                  <Redirect to="/dashboard"></Redirect>
 
                 </Switch>
               </div>

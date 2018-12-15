@@ -2,7 +2,7 @@ import React from "react";
 import { Menu, Icon, Button } from 'antd';
 
 
-import { browserHistory,withRouter } from 'react-router-dom';
+import { browserHistory, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 const SubMenu = Menu.SubMenu;
 
@@ -22,7 +22,7 @@ class SideBar extends React.Component {
   }
 
   changePage = (path) => {
-   
+
     // return(<Redirect to="/dashboard"/>) 
   }
 
@@ -36,23 +36,23 @@ class SideBar extends React.Component {
         <Menu
           defaultSelectedKeys={['1']}
           mode="inline"
-          theme="light"
+          theme="dark"
           inlineCollapsed={this.state.collapsed}
           inlineIndent={24}
           className="ixorptube-sidebar"
           style={{ "height": "100%", "position": "absolute" }}
         >
 
-          <Menu.Item key="1" onClick={() =>  this.props.history.push('/dashboard')} >
-            <Icon type="pie-chart" style={{ "fontSize": "22px", margin: "-3px" }} />
+          <Menu.Item key="1" onClick={() => this.props.history.push('/dashboard')} className="menuItem">
+            <Icon type="pie-chart" style={{ "fontSize": "22px", "marginLeft": -2, "marginTop": 10 }} />
             <span>Dashboard</span>
           </Menu.Item>
-          <Menu.Item key="2" onClick={() =>  this.props.history.push('/proxy_list')} >
-            <Icon type="desktop" style={{ "fontSize": "22px", margin: "-3px" }} />
+          <Menu.Item key="2" onClick={() => this.props.history.push('/proxy_list')} className="menuItem">
+            <Icon type="desktop" style={{ "fontSize": "22px", "marginLeft": -2, "marginTop": 10 }} />
             <span>Proxy List</span>
           </Menu.Item>
-          <Menu.Item key="3" onClick={() =>  this.props.history.push('/settings')} >
-            <Icon type="setting" style={{ "fontSize": "22px", margin: "-3px" }} />
+          <Menu.Item key="3" onClick={() => this.props.history.push('/settings')} className="menuItem" >
+            <Icon type="setting" style={{ "fontSize": "22px", "marginLeft": -2, "marginTop": 10 }} />
             <span>Settings</span>
           </Menu.Item>
         </Menu>
@@ -60,6 +60,6 @@ class SideBar extends React.Component {
     );
   }
 }
-SideBar=withRouter(SideBar)
+SideBar = withRouter(SideBar)
 export default SideBar;
 

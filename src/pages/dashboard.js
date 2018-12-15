@@ -1,27 +1,24 @@
 import React from 'react'
-import {withRouter,Redirect } from 'react-router';
-import { Menu, Icon, Button } from 'antd';
+import { withRouter, Redirect } from 'react-router';
+import { Menu, Icon, Button, Divider } from 'antd';
 
 export default class Dashboard extends React.Component {
     constructor(props) {
         super(props)
-        console.log(this.props)
     }
 
     render() {
-      
         return (
             <div>
-                <p>Dashboard</p>
-                <hr />
-                <Button onClick={() => {
-                    history.goBack()
-                }}>back</Button>
+                <span className="pageTitle">Dashboard</span>
+
+
             </div>
         )
+
     }
 
-   
 
-} withRouter(Dashboard) 
+
+} withRouter(Dashboard)
 // class Page end
