@@ -1,6 +1,5 @@
 import React from 'react'
-//import { Router } from './components'
-import routes from './pages/routes'
+import PropTypes from 'prop-types';
 
 import {
   BrowserRouter as Router, browserHistory,
@@ -8,9 +7,6 @@ import {
 } from 'react-router-dom';
 
 import { Redirect } from 'react-router';
-
-import { Icon, Button } from 'antd';
-
 
 import Dashboard from './pages/dashboard'
 import ProxyList from './pages/proxy_list'
@@ -21,37 +17,45 @@ import WindowControl from './components/window_control'
 
 import './styles/index.less'
 
+const {ipcRenderer: ipc} = require('electron');
+
 export default class App extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {
+      title: 'Dashboard'
+    }
+  }
+
+  setTitle(titleIn) {
+    this.setState({ title: titleIn });
   }
 
   render() {
     return (
-      <div id="app">
+      <div id='app'>
 
         <Router history={browserHistory}>
 
-          <div id="contents">
+          <div id='contents'>
 
-            <SideBar/>
+            <SideBar titleCallBack={this.setTitle.bind(this)} />
 
-            <div id="pages">
+            <div id='pages'>
 
-              <div id="topBar" className="drag">
-                <span id="logo" className="ixorptube-logo unselective">IxorpTube</span>
-
-                <WindowControl className="windowControl"/>
-               
+              <div id='topBar' className='drag'>
+                <span className='pageTitle'>{this.state.title}</span>
+                <span id='logo' className='ixorptube-logo unselective'>IxorpTube</span>
+                <WindowControl className='windowControl' ipc={ipc}/>
               </div>
 
-              <div id="container">
+              <div id='container'>
                 <Switch>
 
-                  <Route path="/dashboard" component={Dashboard} />
-                  <Route path="/proxy_list" component={ProxyList} />
-                  <Route path="/settings" component={Settings} />
-                  <Redirect to="/dashboard"></Redirect>
+                  <Route path='/dashboard' component={Dashboard} />
+                  <Route path='/proxy_list' component={ProxyList} />
+                  <Route path='/settings' component={Settings} />
+                  <Redirect to='/dashboard' />
 
                 </Switch>
               </div>

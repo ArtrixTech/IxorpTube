@@ -1,8 +1,11 @@
 const path = require('path')
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow ,ipcMain} = require('electron')
 const { port } = require('../config/dev.config')
 
 const { NODE_ENV } = process.env
+
+
+
 
 let mainWindow, winURL
 
@@ -50,4 +53,14 @@ app.on('activate', function () {
     createWindow()
   }
 })
+
+ipcMain.on('min', e=> mainWindow.minimize());
+ipcMain.on('max', e=> {
+    if (mainWindow.isMaximized()) {
+        mainWindow.unmaximize()
+    } else {
+        mainWindow.maximize()
+    }
+});
+ipcMain.on('close', e=> mainWindow.close());
 

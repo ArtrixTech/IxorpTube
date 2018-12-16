@@ -10,11 +10,11 @@ export default class WindowControl extends React.Component {
         return (
 
             <div style={{ display: "inline-block" }} className={this.props.className}>
-                <Button className="windowButton minimize no-drag" type="ghost" size="small" shape="circle">
+                <Button className="windowButton minimize no-drag" onClick={() => { this.props.ipc.send("min") }} type="ghost" size="small" shape="circle">
                     <Icon type="minus" className="windowButton icon" />
                 </Button>
 
-                <Button className="windowButton close no-drag" type="primary" size="small" shape="circle">
+                <Button className="windowButton close no-drag" onClick={() => { this.props.ipc.send("close") }} type="primary" size="small" shape="circle">
                     <Icon type="close" className="windowButton icon" />
                 </Button>
             </div>
