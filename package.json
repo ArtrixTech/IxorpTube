@@ -1,6 +1,6 @@
 {
-  "name": "electron-antd",
-  "version": "1.0.0",
+  "name": "IxorpTube",
+  "version": "1.0.1",
   "description": "",
   "main": "electron/main.js",
   "scripts": {
@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lanten/electron-antd.git"
+    "url": "git+https://github.com/artrixtech/IxorpTube.git"
   },
-  "author": "lanten",
-  "license": "ISC",
+  "author": "Artrix",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lanten/electron-antd/issues"
+    "url": "https://github.com/artrixtech/IxorpTube/issues"
   },
-  "homepage": "https://github.com/lanten/electron-antd#readme",
+  "homepage": "https://github.com/artrixtech/IxorpTube#readme",
   "dependencies": {
     "antd": "^3.11.0",
     "axios": "^0.18.0",
